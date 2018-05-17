@@ -2,75 +2,50 @@ const express = require('express')
 const Drone = require('parrot-minidrone');
 
 const app = express()
-const drone = new Drone({autoconnect: true, droneFilter: 'Mambo_743291'});
+const drone = new Drone({autoconnect: true});
 
 
-app.get('/turn/:speed', function (req, res) {
-  console.log(req.query);
-  res.send("yaw speed is set to " + req.params.speed);
-  drone.setFlightParams({
-            yaw: req.params.speed
-  });
 
-});
-
-
-app.get('/moveLeftRight/:speed', function (req, res) {
-  console.log(req.query);
-  res.send("roll speed is set to " + req.params.speed);
-  drone.setFlightParams({
-            roll: req.params.speed
-  });
-
-});
-
-app.get('/moveForwardBackward/:speed', function (req, res) {
-  console.log(req.query);
-  res.send("pitch speed is set to " + req.params.speed);
-  drone.setFlightParams({
-            pitch: req.params.speed
-  });
-
-});
-
-app.get('/moveUpDown/:speed', function (req, res) {
-  console.log(req.query);
-  res.send("altitude speed is set to " + req.params.speed);
-  drone.setFlightParams({
-            altitude: req.params.speed
-  });
-
-});
-
-app.get('/takeoff', function (req, res) {
+app.get('/start', function (req, res) {
   drone.takeOff();
-  console.log(req.params)
-  res.send("take off");
 });
 
-app.get('/land', function (req, res) {
-  console.log(req.params)
-  res.send("land");
+app.get('/stop', function (req, res) {
   drone.land();
 });
 
-app.use(express.static('frontend/dist'));
-
 app.get('/emergency', function (req, res) {
-  console.log(req.params)
-  res.send("emergency");
   drone.emergency();
 });
 
 app.get('/trim', function (req, res) {
-  console.log(req.params)
-  res.send("emergency");
   drone.trim();
 });
 
 
 
 
-app.listen(80)
+app.get('/turn/:speed', function (req, res) {
+  drone.setFlightParams({yaw: req.params.speed});
+});
+
+app.get('/left/:speed', function (req, res) {
+  drone.setFlightParams({roll: req.params.speed});
+});
+
+app.get('/forward/:speed', function (req, res) {
+  drone.setFlightParams({pitch: req.params.speed});
+});
+
+app.get('/updown/:speed', function (req, res) {
+  drone.setFlightParams({altitude: req.params.speed});
+
+});
+
+
+app.use(express.static('frontend/dist'));
+
+
+app.listen(8080)
 
 
