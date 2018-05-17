@@ -50,7 +50,7 @@ app.get('/land', function (req, res) {
   drone.land();
 });
 
-
+app.use(express.static('frontend/dist'));
 app.listen(3000)
 
 
