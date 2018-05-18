@@ -43,7 +43,7 @@ app.get('/updown/:speed', function (req, res) {
 });
 
 app.get('/batteryLevel', function (req, res) {
-  res.write(drone.getBatteryLevel());
+  return drone.getBatteryLevel();
 });
 
 
