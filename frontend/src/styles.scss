@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import './assets/styles/bootstrap.min.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 * {
     font-family: 'Verdana';
   }
@@ -379,4 +381,9 @@ a:focus, a:hover, a:active {
 .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
   background-color: #1a252f;
   border-color: #1a252f;
+}
+
+.mat-slider-vertical{
+    min-height: 200px !important;
+    margin-left: 60px;
 }
