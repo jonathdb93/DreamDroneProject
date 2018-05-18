@@ -20,9 +20,54 @@
   </div>
   <br/>
   <div class='col-md-2'>
-    <h3>Elevation</h3>
-    <div class='col-md-2'>
-      <mat-slider vertical thumbLabel min="-100" max="100" step="5" tickInterval="1" value="0" (change)="elevationChanged($event)"></mat-slider>
+    <div class='row text-center'>
+      <h3>Elevation</h3>
+      <div class='col-md-2'>
+      <mat-slider #ElevationSlider vertical thumbLabel min="-100" max="100" step="5" tickInterval="1" value="0" (change)="elevationChanged($event)"></mat-slider>
+      </div>
+    </div>
+    <div class='row'>
+      <button class='btn btn-primary btn-md' (click)='Stabilize()'>
+        Stabilize
+      </button>
+    </div>
+  </div>
+
+  <div class='col-md-9'>
+
+    <div class="row">
+      <h3>
+        Direction
+      </h3>
+    </div>
+    <div class="row" style='padding:20px;'>
+      <button class='btn btn-primary btn-lg' (click)='GoForward()'>
+        <span class="glyphicon glyphicon-arrow-up"></span>
+      </button>
+      <br/>
+    </div>
+    <div class="row">
+      <div class='col-md-4'>
+        <button class='btn btn-primary btn-lg' (click)='GoLeft()'>
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </button>
+      </div>
+      <div class='col-md-4'>
+        <button class='btn btn-primary btn-lg' (click)='Hold()'>
+          HOLD
+        </button>
+      </div>
+      <div class='col-md-4'>
+        <button class='btn btn-primary btn-lg' (click)='GoRight()'>
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </button>
+      </div>
+      <br/>
+    </div>
+    <div class="row" style='padding:20px;'>
+      <button class='btn btn-primary btn-lg' (click)='GoBackward()'>
+        <span class="glyphicon glyphicon-arrow-down"></span>
+      </button>
     </div>
   </div>
 </div>

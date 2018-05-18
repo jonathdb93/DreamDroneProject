@@ -33,4 +33,16 @@ export class DeviceServiceService {
     return this.http.get(this.serverUrl.concat('/batteryLevel'));
   }
   
+  Roll(speed: number, duration:number){
+    return this.http.get(encodeURI(this.serverUrl.concat('/left/',speed.toString(),'/',duration.toString())));
+  }
+
+  Pitch(speed: number, duration:number){
+    return this.http.get(encodeURI(this.serverUrl.concat('/forward/',speed.toString(),'/',duration.toString())));
+  }
+
+  Hold(){
+    return this.http.get(encodeURI(this.serverUrl.concat('/hold')));
+  }
+  
 }
