@@ -25,6 +25,10 @@ export class DeviceServiceService {
     return this.http.get<any>(this.serverUrl.concat('/emergency'));
   }
 
+  UpdateElevation(amount:number){
+    return this.http.get(this.serverUrl.concat('/updown/',amount.toString())).subscribe();
+  }
+
   GetBatteryLife(){
     return this.http.get(this.serverUrl.concat('/batteryLevel'));
   }

@@ -30,6 +30,10 @@ export class DeviceControllerComponent implements OnInit {
     .subscribe(res => console.log(res), error => console.log(error));
   }
 
+  elevationChanged(e){
+    console.log(e.value);
+    this.deviceController.UpdateElevation(e.value);
+  }
 
 
 }
