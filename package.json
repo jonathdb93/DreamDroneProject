@@ -9,7 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^4.1.1",
     "express": "^4.16.3",
-    "parrot-minidrone": "^1.1.1"
+    "jquery": "^1.9.1",
+    "parrot-minidrone": "^1.1.1",
+    "popper.js": "^1.14.3",
+    "websocket": "^1.0.26"
   }
 }

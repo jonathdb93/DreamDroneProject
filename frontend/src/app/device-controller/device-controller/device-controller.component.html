@@ -1,0 +1,32 @@
+<div class='container text-center'>
+
+  <div class='row'>
+    <p>
+      <strong> Start flying!</strong>
+    </p>
+  </div>
+  <div class='row well'>
+
+    <div class='col-md-4'>
+      Battery level drone: {{batteryLevel}} %
+    </div>
+    <div class='col-md-4'>
+      <button class='btn btn-primary' (click)='StartFlying()'>Start</button> &nbsp;&nbsp;
+      <button class='btn btn-primary' (click)='StopFlying()'>Stop</button>
+    </div>
+    <div class='col-md-3'>
+      <button class='btn btn-danger'>EMERGENCY STOP</button>
+    </div>
+  </div>
+  <br/>
+  <div class='col-md-2'>
+    <h3>Elevation</h3>
+    <div class='col-md-2'>
+      <mat-slider vertical min="-100" max="100" step="1" tickInterval="1" value="0" (change)="elevationChanged($event)"></mat-slider>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- glyphicon-chevron-left   glyphicon-chevron-right -->
